@@ -1,0 +1,43 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color:aliceblue;
+    text-align: center;
+}
+
+h1 {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.explanation p {
+    width: 50%;
+    margin: 25px auto
+}
+
+.game  {
+    margin: 0 auto;
+    width: 25%;
+    height: 200px;
+    border-radius: 5%;
+    background-color: lightskyblue;
+    cursor: pointer;
+}
+
+.game p {
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+button {
+    width: 10%;
+    padding: 10px 5px;
+    background-color: lightskyblue;
+    border: none;
+    border-radius: 10%;
+    margin-top: 20px;
+    visibility: hidden;
+    cursor: pointer;
+}
