@@ -3,41 +3,37 @@
 }
 
 body {
-    background-color:aliceblue;
     text-align: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
-h1 {
-    width: 75%;
+.game .explanation p {
+    width: 40%;
     margin: 0 auto;
-}
-
-.explanation p {
-    width: 50%;
-    margin: 25px auto
+    padding: 50px;
 }
 
 .game  {
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
-    width: 25%;
-    height: 200px;
-    border-radius: 5%;
-    background-color: lightskyblue;
+    background-color: #8AAA79;
     cursor: pointer;
 }
 
-.game p {
+.game-text {
     margin: 0 auto;
     padding-top: 90px;
+    font-size: 200%;
+    font-weight: bold;
 }
 
-button {
-    width: 10%;
+#restart {
+    width: 50%;
     padding: 10px 5px;
-    background-color: lightskyblue;
-    border: none;
-    border-radius: 10%;
-    margin-top: 20px;
+    margin: 20px auto;
     visibility: hidden;
     cursor: pointer;
 }
