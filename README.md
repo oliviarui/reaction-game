@@ -1,0 +1,1 @@
+This game tests the user's reaction time by randomly generating a wait time before prompting the user to click. The program will measure the amount of milliseconds elapsed between the time the prompt to click appears and the time the user actually clicks.

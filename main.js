@@ -12,22 +12,25 @@ const waitColor = "#F3CA40"
 //declare waiting time variable
 let time
 
+//call to start game
 startGame()
 // gameButton.addEventListener('click', changeToWaiting)
 
 function startGame() {
-    //set event listeners
+    //remove start game event listener since game has already started
     gameButton.removeEventListener('click', startGame)
+    //add event listener that will change screen to "waiting" mode
     gameButton.addEventListener('click', changeToWaiting)
 
-    //generate waiting time
+    //randomly generate waiting time
     time = Math.random() * 6 + 2
 
-    //hide elements
+    //hide instruction and restart button elements
     instructions.style.visibility = 'visible'
     restartButton.style.visibility = 'hidden'
-    //update styles
+    //update styles of the screen to indicate to the user that they can press to begin the waiting sequence
     gameButton.style.backgroundColor = pressColor
+    //include text to prompt the user
     gameText.innerHTML = 'press to start'
 }
 
@@ -36,11 +39,12 @@ let timeoutID;
 function changeToWaiting() {
     //set event listeners
     gameButton.removeEventListener('click', changeToWaiting)
+    //add event listener to end the game if the user presses before they are allowed to
     gameButton.addEventListener('click', tooEarly)
 
     //hide elements
     instructions.style.visibility = 'hidden'
-    //update styles
+    //update styles to show that the user is in the waiting phase
     gameButton.style.backgroundColor = waitColor
     gameText.innerHTML = 'wait...'
     //set time out
@@ -64,7 +68,7 @@ function changeToPress() {
     //update event listeners
     gameButton.removeEventListener('click', tooEarly)
     gameButton.addEventListener('click', pressed)
-    //update styles
+    //update styles to prompt the user to press
     gameButton.style.backgroundColor = pressColor
     gameText.innerHTML = 'press!'
     //start tracking reaction time
@@ -78,9 +82,9 @@ function pressed() {
     //calculate reaction time
     let endTime = new Date()
     let elapsed = endTime - startTime
-    //update style
+    //update style to show user their reaction time
     gameText.innerHTML = 'your reaction time is: ' + Math.round(elapsed) + ' milliseconds'
-    //show text
+    //show text to prompt user to play again (changed to not actually be a button)
     restartButton.style.visibility = 'visible'
 }
 
